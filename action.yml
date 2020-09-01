@@ -15,22 +15,9 @@ inputs:
 runs: 
   using: 'composite'
   steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-java@v1
-      with:
-        java-version: '12.x'
-    - uses: subosito/flutter-action@v1
-      with:
-        channel: 'beta'
     - run: flutter config --enable-web
     - run: flutter pub get
-
-    - run: flutter build web --release
-      if: github.inputs.useCanvasKit == false
-
-    - run: flutter build web --release --dart-define=FLUTTER_WEB_USE_SKIA=true
-      if: github.inputs.useCanvasKit == true
-
+    - run: flutter build web --release --dart-define=FLUTTER_WEB_USE_SKIA={{inputs.useCanvasKit}}
     - run: git config user.name github-actions
     - run: git config user.email github-actions@github.com
     - run: git --work-tree build/web add --all
