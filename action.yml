@@ -16,10 +16,18 @@ runs:
   using: 'composite'
   steps:
     - run: flutter config --enable-web
+      shell: bash
     - run: flutter pub get
+      shell: bash
     - run: flutter build web --release --dart-define=FLUTTER_WEB_USE_SKIA={{inputs.useCanvasKit}}
+      shell: bash
     - run: git config user.name github-actions
+      shell: bash
     - run: git config user.email github-actions@github.com
+      shell: bash
     - run: git --work-tree build/web add --all
+      shell: bash
     - run: git commit -m "Automatic deployment by github-actions"
+      shell: bash
     - run: git push origin HEAD:gh-pages --force
+      shell: bash
