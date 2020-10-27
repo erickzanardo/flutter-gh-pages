@@ -22,14 +22,22 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'beta'
-      - uses: erickzanardo/flutter-gh-pages@v1
+      - uses: erickzanardo/flutter-gh-pages@v2
+```
+To build a project in a folder other that the root, use the `workingDir` property
+
+```yml
+      ...
+      - uses: erickzanardo/flutter-gh-pages@v2
+        with:
+          workingDir: example
 ```
 
 To make the build using canvas kit, use the `useCanvasKit` property
 
 ```yml
       ...
-      - uses: erickzanardo/flutter-gh-pages@v1
+      - uses: erickzanardo/flutter-gh-pages@v2
         with:
           useCanvasKit: true
 ```
