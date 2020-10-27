@@ -11,23 +11,35 @@ inputs:
     description: 'If the build should use skia (canvas kit) or not (default false)'
     required: false
     default: false
+  workingDir:
+    description: 'The directory where the project is (default .)'
+    required: false
+    default: .
 
-runs: 
+runs:
   using: 'composite'
   steps:
     - run: flutter config --enable-web
       shell: bash
+      working-directory: ${{inputs.workingDir}}
     - run: flutter pub get
       shell: bash
+      working-directory: ${{inputs.workingDir}}
     - run: flutter build web --release --dart-define=FLUTTER_WEB_USE_SKIA=${{inputs.useCanvasKit}}
       shell: bash
+      working-directory: ${{inputs.workingDir}}
     - run: git config user.name github-actions
       shell: bash
+      working-directory: ${{inputs.workingDir}}
     - run: git config user.email github-actions@github.com
       shell: bash
+      working-directory: ${{inputs.workingDir}}
     - run: git --work-tree build/web add --all
       shell: bash
+      working-directory: ${{inputs.workingDir}}
     - run: git commit -m "Automatic deployment by github-actions"
       shell: bash
+      working-directory: ${{inputs.workingDir}}
     - run: git push origin HEAD:gh-pages --force
       shell: bash
+      working-directory: ${{inputs.workingDir}}
