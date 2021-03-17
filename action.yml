@@ -7,10 +7,10 @@ branding:
   icon: code
 
 inputs:
-  useCanvasKit:
-    description: 'If the build should use skia (canvas kit) or not (default false)'
+  webRenderer:
+    description: 'Which web renderer to be used, default is auto'
     required: false
-    default: false
+    default: auto
   workingDir:
     description: 'The directory where the project is (default .)'
     required: false
@@ -25,7 +25,7 @@ runs:
     - run: flutter pub get
       shell: bash
       working-directory: ${{inputs.workingDir}}
-    - run: flutter build web --release --dart-define=FLUTTER_WEB_USE_SKIA=${{inputs.useCanvasKit}}
+    - run: flutter build web --release --web-renderer=${{inputs.webRenderer}}
       shell: bash
       working-directory: ${{inputs.workingDir}}
     - run: git config user.name github-actions

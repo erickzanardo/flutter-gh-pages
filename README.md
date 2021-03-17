@@ -20,24 +20,24 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v1
-        with:
-          channel: 'beta'
-      - uses: erickzanardo/flutter-gh-pages@v2
+      - uses: erickzanardo/flutter-gh-pages@v3
 ```
 To build a project in a folder other that the root, use the `workingDir` property
 
 ```yml
       ...
-      - uses: erickzanardo/flutter-gh-pages@v2
+      - uses: erickzanardo/flutter-gh-pages@v3
         with:
           workingDir: example
 ```
 
-To make the build using canvas kit, use the `useCanvasKit` property
+By default, the action will use the auto setting for web renderers, to change that you can use the webRenderer property.
+
+More on web renderers here: https://flutter.dev/docs/development/tools/web-renderers
 
 ```yml
       ...
-      - uses: erickzanardo/flutter-gh-pages@v2
+      - uses: erickzanardo/flutter-gh-pages@v3
         with:
-          useCanvasKit: true
+          webRenderer: canvaskit
 ```
