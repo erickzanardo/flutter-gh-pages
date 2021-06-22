@@ -41,3 +41,7 @@ More on web renderers here: https://flutter.dev/docs/development/tools/web-rende
         with:
           webRenderer: canvaskit
 ```
+
+To use github pages with a custom domain, add a file named `CNAME` to the
+`<project>/web` folder whose contents is your domain, like:
+> subdomain.domain.com
