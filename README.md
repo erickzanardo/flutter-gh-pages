@@ -51,6 +51,16 @@ To pass arguments to the builder with `--dart-define` the `dartDefine` property 
           dartDefine: "customArg=TEST"
 ```
 
+
+And consumed in the code via (**const** is mandatory!):
+```dart
+void main() async {
+  String arg = const String.fromEnvironment('customArg'); // arg = "TEST"
+  ...
+}
+```
+
+
 To use github pages with a custom domain, add a file named `CNAME` to the
 `<project>/web` folder whose contents is your domain, like:
 > subdomain.domain.com
