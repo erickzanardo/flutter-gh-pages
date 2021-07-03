@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2 # Only works with v2
       - uses: subosito/flutter-action@v1
       - uses: erickzanardo/flutter-gh-pages@v3
 ```
