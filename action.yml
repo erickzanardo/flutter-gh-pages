@@ -15,10 +15,6 @@ inputs:
     description: 'The directory where the project is (default .)'
     required: false
     default: .
-#   baseHref:
-#     description: 'base-href i.e. / for root or /sub/ for subdirectory (add trailing /)'
-#     required: false
-#     default: /
   dartDefine:
     description: '--dart-define="TEST="custom-args" >> USE IN MAIN USING: >> const t = String.fromEnvironment("TEST"); >> RESULT: >> t = custom-args'
     required: false
