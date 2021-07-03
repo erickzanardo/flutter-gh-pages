@@ -29,8 +29,6 @@ runs:
     - run: flutter pub get
       shell: bash
       working-directory: ${{inputs.workingDir}}
-    # Placeholder for when this gets implemented. See https://github.com/flutter/flutter/pull/80519
-    #- run: flutter build web --release --web-renderer=${{inputs.webRenderer}} --base-href ${{inputs.baseHref}} --dart-define=${{inputs.dartDefine}}
     - run: flutter build web --release --web-renderer=${{inputs.webRenderer}} --dart-define=${{inputs.dartDefine}}
       shell: bash
       working-directory: ${{inputs.workingDir}}
