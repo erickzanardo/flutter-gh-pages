@@ -18,6 +18,10 @@ inputs:
   targetBranch:
     required: false
     default: gh-pages
+  dartDefine:
+    description: '--dart-define="TEST="custom-args" >> USE IN MAIN USING: >> const t = String.fromEnvironment("TEST"); >> RESULT: >> t = custom-args'
+    required: false
+    default: ""
 
 runs:
   using: 'composite'
@@ -28,7 +32,7 @@ runs:
     - run: flutter pub get
       shell: bash
       working-directory: ${{inputs.workingDir}}
-    - run: flutter build web --release --web-renderer=${{inputs.webRenderer}}
+    - run: flutter build web --release --web-renderer=${{inputs.webRenderer}} --dart-define=${{inputs.dartDefine}}
       shell: bash
       working-directory: ${{inputs.workingDir}}
     - run: git config user.name github-actions
