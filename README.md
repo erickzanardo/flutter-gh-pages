@@ -58,14 +58,14 @@ To pass arguments to the builder with `--dart-define` the `dartDefine` property 
       ...
       - uses: erickzanardo/flutter-gh-pages@v6
         with:
-          dartDefine: "customArg=TEST"
+          dartDefine: "argKey=argVal"
 ```
 
 
 And consumed in the code via (**const** is mandatory!):
 ```dart
 void main() async {
-  String arg = const String.fromEnvironment('customArg'); // arg = "TEST"
+  String arg = const String.fromEnvironment('argKey'); // arg = "ArgVal"
   ...
 }
 ```
