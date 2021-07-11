@@ -20,13 +20,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2 # Only works with v2
       - uses: subosito/flutter-action@v1
-      - uses: erickzanardo/flutter-gh-pages@v5
+      - uses: erickzanardo/flutter-gh-pages@v6
 ```
 To build a project in a folder other that the root, use the `workingDir` property
 
 ```yml
       ...
-      - uses: erickzanardo/flutter-gh-pages@v5
+      - uses: erickzanardo/flutter-gh-pages@v6
         with:
           workingDir: example
 ```
@@ -37,7 +37,7 @@ More on web renderers here: https://flutter.dev/docs/development/tools/web-rende
 
 ```yml
       ...
-      - uses: erickzanardo/flutter-gh-pages@v5
+      - uses: erickzanardo/flutter-gh-pages@v6
         with:
           webRenderer: canvaskit
 ```
@@ -47,7 +47,7 @@ If you need to change that, the `targetBranch` property can be used
 
 ```yml
       ...
-      - uses: erickzanardo/flutter-gh-pages@v5
+      - uses: erickzanardo/flutter-gh-pages@v6
         with:
           targetBranch: my-gh-pages-branch
 ```
@@ -56,7 +56,7 @@ To pass arguments to the builder with `--dart-define` the `dartDefine` property 
 
 ```yml
       ...
-      - uses: erickzanardo/flutter-gh-pages@v5
+      - uses: erickzanardo/flutter-gh-pages@v6
         with:
           dartDefine: "customArg=TEST"
 ```
