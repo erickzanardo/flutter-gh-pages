@@ -21,7 +21,7 @@ inputs:
   dartDefine:
     description: 'Custom arg to be consumed in the app via --> var someArg = const String.fromEnvironment("argkey"); // someArg = argVal'
     required: false
-    default: "argKey=argVal"
+    default:
 
 runs:
   using: 'composite'
