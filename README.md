@@ -20,13 +20,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2 # Only works with v2
       - uses: subosito/flutter-action@v1
-      - uses: erickzanardo/flutter-gh-pages@v4
+      - uses: erickzanardo/flutter-gh-pages@v5
 ```
 To build a project in a folder other that the root, use the `workingDir` property
 
 ```yml
       ...
-      - uses: erickzanardo/flutter-gh-pages@v4
+      - uses: erickzanardo/flutter-gh-pages@v5
         with:
           workingDir: example
 ```
@@ -37,16 +37,26 @@ More on web renderers here: https://flutter.dev/docs/development/tools/web-rende
 
 ```yml
       ...
-      - uses: erickzanardo/flutter-gh-pages@v4
+      - uses: erickzanardo/flutter-gh-pages@v5
         with:
           webRenderer: canvaskit
+```
+
+By default, the action will send the files to the `gh-pages` branch, which is the default used by Github Pages.
+If you need to change that, the `targetBranch` property can be used
+
+```yml
+      ...
+      - uses: erickzanardo/flutter-gh-pages@v5
+        with:
+          targetBranch: my-gh-pages-branch
 ```
 
 To pass arguments to the builder with `--dart-define` the `dartDefine` property can be used
 
 ```yml
       ...
-      - uses: erickzanardo/flutter-gh-pages@v4
+      - uses: erickzanardo/flutter-gh-pages@v5
         with:
           dartDefine: "customArg=TEST"
 ```
