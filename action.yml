@@ -19,9 +19,9 @@ inputs:
     required: false
     default: gh-pages
   dartDefine:
-    description: '--dart-define="TEST="custom-args" >> USE IN MAIN USING: >> const t = String.fromEnvironment("TEST"); >> RESULT: >> t = custom-args'
+    description: '--dart-define="argkey=argval" >> USE IN MAIN WITH: >> final t = const String.fromEnvironment("argkey"); >> RESULT: >> t = argval'
     required: false
-    default: ""
+    default: "argkey=argval"
 
 runs:
   using: 'composite'
