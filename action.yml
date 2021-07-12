@@ -18,10 +18,10 @@ inputs:
   targetBranch:
     required: false
     default: gh-pages
-  dartDefine:
-    description: 'Custom arg to be consumed in the app via --> var someArg = const String.fromEnvironment("argkey"); // someArg = argVal'
+  customArgs:
+    description: 'Custom args like: --dart-define="simple=example"'
     required: false
-    default: "argkey=argVal"
+    default:
 
 runs:
   using: 'composite'
@@ -32,7 +32,7 @@ runs:
     - run: flutter pub get
       shell: bash
       working-directory: ${{inputs.workingDir}}
-    - run: flutter build web --release --web-renderer=${{inputs.webRenderer}} --dart-define=${{inputs.dartDefine}}
+    - run: flutter build web --release --web-renderer=${{inputs.webRenderer}} ${{inputs.customArgs}}
       shell: bash
       working-directory: ${{inputs.workingDir}}
     - run: git config user.name github-actions
