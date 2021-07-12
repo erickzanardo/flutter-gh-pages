@@ -52,13 +52,13 @@ If you need to change that, the `targetBranch` property can be used
           targetBranch: my-gh-pages-branch
 ```
 
-To pass arguments to the builder with `--dart-define` the `dartDefine` property can be used
+To pass arguments to the builder with `--dart-define` the `customArgs` property can be used
 
 ```yml
       ...
       - uses: erickzanardo/flutter-gh-pages@v6
         with:
-          dartDefine: "argKey=argVal"
+          customArgs: --dart-define="simple=example"
 ```
 
 
