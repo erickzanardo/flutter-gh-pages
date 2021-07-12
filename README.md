@@ -65,7 +65,7 @@ To pass arguments to the builder with `--dart-define` the `dartDefine` property 
 And consumed in the code via (**const** is mandatory!):
 ```dart
 void main() async {
-  String arg = const String.fromEnvironment('argKey'); // arg = "ArgVal"
+  String arg = const String.fromEnvironment('simple'); // arg = "example"
   ...
 }
 ```
