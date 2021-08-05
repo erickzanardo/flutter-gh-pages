@@ -19,7 +19,7 @@ inputs:
     required: false
     default: gh-pages
   repoName:
-    description: 'Name of the Project Site repositoy (if aplicable)'
+    description: 'Name of the Project Site repositoy (if applicable)'
     required: false
     default: "/"
   customArgs:
