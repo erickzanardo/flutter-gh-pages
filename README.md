@@ -20,13 +20,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2 # Only works with v2
       - uses: subosito/flutter-action@v1
-      - uses: erickzanardo/flutter-gh-pages@v6
+      - uses: erickzanardo/flutter-gh-pages@v7
 ```
 To build a project in a folder other that the root, use the `workingDir` property
 
 ```yml
       ...
-      - uses: erickzanardo/flutter-gh-pages@v6
+      - uses: erickzanardo/flutter-gh-pages@v7
         with:
           workingDir: example
 ```
@@ -37,7 +37,7 @@ More on web renderers here: https://flutter.dev/docs/development/tools/web-rende
 
 ```yml
       ...
-      - uses: erickzanardo/flutter-gh-pages@v6
+      - uses: erickzanardo/flutter-gh-pages@v7
         with:
           webRenderer: canvaskit
 ```
@@ -47,16 +47,26 @@ If you need to change that, the `targetBranch` property can be used
 
 ```yml
       ...
-      - uses: erickzanardo/flutter-gh-pages@v6
+      - uses: erickzanardo/flutter-gh-pages@v7
         with:
           targetBranch: my-gh-pages-branch
+```
+
+By default, the generated page only works on `User or Organization sites` ex:`user.github.io/`. 
+You can change that by specifying the `repoName`, so the site will work on a `Project Site`, ex:`user.github.io/repoName`.
+
+```yml
+      ...
+      - uses: erickzanardo/flutter-gh-pages@v7
+        with:
+          repoName: my-repo
 ```
 
 To pass arguments to the builder with `--dart-define` the `customArgs` property can be used
 
 ```yml
       ...
-      - uses: erickzanardo/flutter-gh-pages@v6
+      - uses: erickzanardo/flutter-gh-pages@v7
         with:
           customArgs: --dart-define="simple=example"
 ```
