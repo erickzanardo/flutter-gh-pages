@@ -18,8 +18,8 @@ inputs:
   targetBranch:
     required: false
     default: gh-pages
-  repoName:
-    description: 'Name of the Project Site repositoy (if applicable)'
+  baseHref:
+    description: 'base href (if applicable)'
     required: false
     default: "/"
   customArgs:
@@ -36,19 +36,13 @@ runs:
     - run: flutter pub get
       shell: bash
       working-directory: ${{inputs.workingDir}}
-    - run: flutter build web --release --web-renderer=${{inputs.webRenderer}} ${{inputs.customArgs}}
+    - run: flutter build web --release --web-renderer=${{inputs.webRenderer}} --base-href ${{inputs.baseHref}} ${{inputs.customArgs}}
       shell: bash
       working-directory: ${{inputs.workingDir}}
     - run: git config user.name github-actions
       shell: bash
       working-directory: ${{inputs.workingDir}}
     - run: git config user.email github-actions@github.com
-      shell: bash
-      working-directory: ${{inputs.workingDir}}
-    - run: >
-        if [ "${{inputs.repoName}}" != "/" ]; then
-          sed -e 's+<base href="/">+<base href="/${{inputs.repoName}}/">+' -i 'build/web/index.html'
-        fi
       shell: bash
       working-directory: ${{inputs.workingDir}}
     - run: git --work-tree build/web add --all

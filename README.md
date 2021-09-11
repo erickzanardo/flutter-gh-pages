@@ -53,13 +53,13 @@ If you need to change that, the `targetBranch` property can be used
 ```
 
 By default, the generated page only works on `User or Organization sites` ex:`user.github.io/`. 
-You can change that by specifying the `repoName`, so the site will work on a `Project Site`, ex:`user.github.io/repoName`.
+You can change that by specifying the `baseHref`, so the site will work on a `Project Site`, ex:`user.github.io/repoName`.
 
 ```yml
       ...
       - uses: erickzanardo/flutter-gh-pages@v7
         with:
-          repoName: my-repo
+          baseHref: my-repo
 ```
 
 To pass arguments to the builder with `--dart-define` the `customArgs` property can be used
