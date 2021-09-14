@@ -56,7 +56,7 @@ By default, the generated page only works on `User or Organization sites` ex:`us
 You can change that by specifying the `baseHref` argument, so the site will work on a `Project Site`, ex:`user.github.io/repoName`.
 
 The parameter `baseHref` must start and end with a forward slash `"/"`.
-(For projects created on flutter release version `2.2.3` or earlier, please manually edit the file `web/index.html`, changing the line `<base href="/">` to `<base href="$FLUTTER_BASE_HREF">`)
+(For projects created on flutter version earlier than `2.5.0`, please manually edit the file `web/index.html`, changing the line `<base href="/">` to `<base href="$FLUTTER_BASE_HREF">`)
 
 ```yml
       ...
