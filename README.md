@@ -53,7 +53,7 @@ If you need to change that, the `targetBranch` property can be used
 ```
 
 By default, the generated page only works on `User or Organization sites` ex:`user.github.io/`. 
-You can change that by specifying the `baseHref`, so the site will work on a `Project Site`, ex:`user.github.io/repoName`.
+You can change that by specifying the `baseHref` argument, so the site will work on a `Project Site`, ex:`user.github.io/repoName`.
 The parameter `baseHref` must start and end with a forward slash `"/"`.
 (For projects created on flutter release version `2.2.3` or earlier, please manually edit the file `web/index.html`, changing the line `<base href="/">` to `<base href="$FLUTTER_BASE_HREF">`)
 
