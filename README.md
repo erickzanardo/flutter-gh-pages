@@ -1,3 +1,7 @@
+# DEPRECATED
+
+This repository is deprecated, the maintenance of this action has move to the Blue Fire organization, check the official repository: https://github.com/bluefireteam/flutter-gh-pages
+
 # Flutter GH Pages
 
 Automates the build and deployment of your Flutter web app on Github gh pages
